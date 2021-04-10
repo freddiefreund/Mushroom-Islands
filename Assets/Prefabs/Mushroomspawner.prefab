@@ -51,5 +51,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   spawnTime: 1.091
-  shroomPrefab: {fileID: 4100119821390933016, guid: 2327a55a59e08d04cbce40d6d7d8f4a2, type: 3}
+  shroomPrefab: {fileID: 4100119821390933016, guid: adf8f61ceee33d744a70bd5556a53754, type: 3}
   currentTime: 0
