@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,6 +10,7 @@ public class ShroomMover : MonoBehaviour
 {
     [SerializeField] private float goalXPos;
     [SerializeField] private float jumpTime;
+    [SerializeField] private LayerMask groundLayer;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private float currentXPos;
@@ -63,7 +65,7 @@ public class ShroomMover : MonoBehaviour
         float moveAmountX = moveAmountPerSecond / 20f;
         float maxMoveAmountY = 0.4f;
         Vector3 moveVector = new Vector3(moveAmountX, 0, 0);
-        while (!arrived)
+        while (!arrived && IsGrounded())
         {
             if (Time.time >= currentTime)
             {
@@ -83,6 +85,19 @@ public class ShroomMover : MonoBehaviour
 
             yield return new WaitForSeconds(0.05f);
         }
+    }
+    
+    bool IsGrounded() {
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.down;
+        float distance = 3.0f;
+    
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null) {
+            return true;
+        }
+        Debug.Log("Not Grounded!");
+        return false;
     }
 
     IEnumerator FadeIn()
@@ -116,6 +131,11 @@ public class ShroomMover : MonoBehaviour
         if (rounded < unrounded)
             rounded += 1;
         currentTime = jumpTime * rounded;
+    }
+
+    public void Die()
+    {
+        StartCoroutine(FadeOut());
     }
 
     private void ArriveAtDestination()
