@@ -13,6 +13,7 @@ public class ShroomMover : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+    private MushroomSpriteChanger spriteChanger;
     private float currentXPos;
     private float moveAmountPerSecond;
     private bool arrived = false;
@@ -21,6 +22,7 @@ public class ShroomMover : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteChanger = GetComponent<MushroomSpriteChanger>();
     }
 
     void Start()
@@ -39,11 +41,13 @@ public class ShroomMover : MonoBehaviour
         {
             // Move left
             moveAmountPerSecond = -0.5f;
+            spriteChanger.SetDirection(0);
         }
         else
         {
             // Move right
             moveAmountPerSecond = 0.5f;
+            spriteChanger.SetDirection(1);
         }
         StartCoroutine(Move());
     }
@@ -69,6 +73,7 @@ public class ShroomMover : MonoBehaviour
         {
             if (Time.time >= currentTime)
             {
+                spriteChanger.SetToJumping();
                 currentTime += jumpTime;
                 rb.velocity = new Vector3(0, 5, 0);
                 for (int i = 0; i < 10; i++)
@@ -82,7 +87,7 @@ public class ShroomMover : MonoBehaviour
                     yield return new WaitForSeconds(0.035f);
                 }
             }
-
+            spriteChanger.SetToStanding();
             yield return new WaitForSeconds(0.05f);
         }
     }
@@ -91,23 +96,16 @@ public class ShroomMover : MonoBehaviour
         Vector2 position = transform.position;
         Vector2 pos1;
         Vector2 pos2;
-        if (moveAmountPerSecond > 0)
-        {
-            // Shroom is moving right
-            pos1 = position; 
-            pos1.x -= 0.5f;
-        }
-        else
-        {
-            // Shroom is moving left
-            pos2 = position;
-            pos2.x += 0.5f;
-        }
+        pos1 = position; 
+        pos1.x -= 0.3f;
+        pos2 = position;
+        pos2.x += 0.3f;
         Vector2 direction = Vector2.down;
         float distance = 3.0f;
     
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
-        if (hit.collider != null) {
+        RaycastHit2D hit1 = Physics2D.Raycast(pos1, direction, distance, groundLayer);
+        RaycastHit2D hit2 = Physics2D.Raycast(pos2, direction, distance, groundLayer);
+        if (hit1.collider != null) {
             return true;
         }
         return false;
@@ -157,6 +155,7 @@ public class ShroomMover : MonoBehaviour
         {
             Debug.Log("I arrived!");
             arrived = true;
+            spriteChanger.SetToSmiling();
             StartCoroutine(FadeOut());
         }
     }
