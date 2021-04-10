@@ -14,7 +14,7 @@ public class CameraMovementController : MonoBehaviour
     void Update()
     {
         if(Input.GetKey(KeyCode.A)){
-            if(transform.position.x <= -10.5f){
+            if(transform.position.x <= -23.8f){
                 return;
             }else{
                 transform.position -= new Vector3(0.09f,0,0);
