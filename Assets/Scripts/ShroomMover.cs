@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,6 +10,7 @@ public class ShroomMover : MonoBehaviour
     [SerializeField] private float goalXPos;
     [SerializeField] private float jumpTime;
     private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
     private float currentXPos;
     private float moveAmountPerSecond;
     private bool arrived = false;
@@ -16,10 +18,15 @@ public class ShroomMover : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Start()
     {
+        Color color= spriteRenderer.color;
+        color.a = 0f;
+        spriteRenderer.color = color;
+        StartCoroutine(FadeIn());
         StartMoving();
     }
 
@@ -78,6 +85,30 @@ public class ShroomMover : MonoBehaviour
         }
     }
 
+    IEnumerator FadeIn()
+    {
+        Color color = spriteRenderer.color;
+        for (int i = 0; i < 10; i++)
+        {
+            color.a += 0.1f;
+            spriteRenderer.color = color;
+            yield return new WaitForSeconds(0.05f);
+        }
+    }
+
+    IEnumerator FadeOut()
+    {
+        Color color = spriteRenderer.color;
+        for (int i = 0; i < 10; i++)
+        {
+            color.a -= 0.1f;
+            spriteRenderer.color = color;
+            yield return new WaitForSeconds(0.05f);
+        }
+        MushroomSpawner.RemoveShroom();
+        Destroy(gameObject);
+    }
+
     private void SetJumpTimer()
     {
         float unrounded = Time.time / jumpTime;
@@ -93,6 +124,7 @@ public class ShroomMover : MonoBehaviour
         {
             //Debug.Log("I arrived!");
             arrived = true;
+            StartCoroutine(FadeOut());
         }
     }
 
