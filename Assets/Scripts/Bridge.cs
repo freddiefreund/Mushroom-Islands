@@ -19,14 +19,19 @@ public class Bridge : MonoBehaviour, IPointerClickHandler
     }
 
     public void OnPointerClick(PointerEventData pointer){
-        Durability += 2;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);    
-        Vector3 point = ray.origin + (ray.direction * distance);
-        Instantiate(popupText, point, Quaternion.identity);
-        popupText.transform.GetChild(0).GetComponent<TextMeshPro>().text = "repaired!";
-        if(Durability > 100){
-            Durability = 100;
+        if(Durability != 100){
+            Durability += 10;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);    
+            Vector3 point = ray.origin + (ray.direction * distance);
+            Instantiate(popupText, point, Quaternion.identity);
+            popupText.transform.GetChild(0).GetComponent<TextMeshPro>().text = "repaired!";
+            if(Durability > 100){
+                Durability = 100;
+            }
+
         }
+
+
     }
     
 }

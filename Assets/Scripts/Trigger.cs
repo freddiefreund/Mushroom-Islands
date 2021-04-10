@@ -8,13 +8,8 @@ public class Trigger : MonoBehaviour
     private float time;
 
     private void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("Entered the trigger");
         Mushroom shroom = other.GetComponent<Mushroom>();
-
-        if(time >= 1f){
-            Bridge.Durability -= shroom.Weight;
-            time = 0;
-        }else{
-            time += Time.deltaTime;
-        }
+        Bridge.Durability -= shroom.Weight;
     }
 }
