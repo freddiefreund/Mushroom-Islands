@@ -17,14 +17,14 @@ public class CameraMovementController : MonoBehaviour
             if(transform.position.x <= -10.5f){
                 return;
             }else{
-                transform.position -= new Vector3(0.06f,0,0);
+                transform.position -= new Vector3(0.09f,0,0);
             }
         }
         if(Input.GetKey(KeyCode.D)){
            if(transform.position.x >= 19.5f){
                 return;
             }else{
-                transform.position += new Vector3(0.06f,0,0);
+                transform.position += new Vector3(0.09f,0,0);
             }
         }
     }

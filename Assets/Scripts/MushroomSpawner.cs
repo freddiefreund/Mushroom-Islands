@@ -34,7 +34,6 @@ public class MushroomSpawner : MonoBehaviour
         Transform startIsland = islands[startIslandID];
         float xSpawnOffset = Random.Range(-1f, 1f);
         Vector3 spawnPosition = startIsland.position + new Vector3(xSpawnOffset, 0, 0);
-        Debug.Log(startIsland.position);
         
         // Get destination 
         int destinationIslandID;
