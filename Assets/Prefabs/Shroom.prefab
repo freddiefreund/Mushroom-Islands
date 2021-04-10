@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goalXPos: 0
+  jumpTime: 1.091
 --- !u!50 &8674536099155170123
 Rigidbody2D:
   serializedVersion: 4
