@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Bridge : MonoBehaviour, IPointerClickHandler
 {
     public float Durability = 100f;
+    public GameObject popupText;
 
 
     void Update()
