@@ -745,7 +745,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8689657750854998944, guid: eec14723b06b2f1408f3b849f3f2e7b8, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8689657750854998944, guid: eec14723b06b2f1408f3b849f3f2e7b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -829,7 +829,7 @@ GameObject:
   - component: {fileID: 99471629}
   - component: {fileID: 99471628}
   - component: {fileID: 99471627}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bridge (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -956,7 +956,7 @@ GameObject:
   - component: {fileID: 161375885}
   - component: {fileID: 161375884}
   - component: {fileID: 161375883}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bridge (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1202,7 +1202,7 @@ Transform:
   - {fileID: 591065136}
   - {fileID: 854222201}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &189881209
 GameObject:
@@ -1215,7 +1215,7 @@ GameObject:
   - component: {fileID: 189881210}
   - component: {fileID: 189881212}
   - component: {fileID: 189881211}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: IslandPlatform (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1254,8 +1254,8 @@ EdgeCollider2D:
   m_Points:
   - {x: -2.9708712, y: -4.393556}
   - {x: -5.794481, y: -2.3261676}
-  - {x: -5.931305, y: -0.993724}
-  - {x: 4.132077, y: -0.9159163}
+  - {x: -6.305288, y: -1.0205901}
+  - {x: 4.1651273, y: -1.0885577}
   - {x: -0.8199904, y: -5.2120094}
   - {x: -3.3639138, y: -4.1873217}
   m_AdjacentStartPoint: {x: 0, y: 0}
@@ -1488,7 +1488,7 @@ Transform:
   - {fileID: 20974647}
   - {fileID: 578071211}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &296765026
 GameObject:
@@ -1524,7 +1524,7 @@ Transform:
   - {fileID: 971850413}
   - {fileID: 628724151}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &299353199
 GameObject:
@@ -1911,7 +1911,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 999
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2123,9 +2123,9 @@ GameObject:
   - component: {fileID: 427938917}
   - component: {fileID: 427938916}
   - component: {fileID: 427938915}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MushroomKiller
-  m_TagString: Untagged
+  m_TagString: Killer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2142,6 +2142,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50cbd75533c687d438f002f6643c394c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KillCount: 0
+  SavedCount: 0
+  KillCounter: {fileID: 410528285}
+  SavedCounter: {fileID: 826270927}
 --- !u!61 &427938916
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2231,7 +2235,7 @@ Transform:
   m_LocalScale: {x: 63.307205, y: 2.9099, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &445009811
 GameObject:
@@ -2384,7 +2388,7 @@ Transform:
   - {fileID: 1788027273}
   - {fileID: 1370977677}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &475775718
 GameObject:
@@ -2469,7 +2473,7 @@ Transform:
   - {fileID: 618012232}
   - {fileID: 445009812}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &475775721
 MonoBehaviour:
@@ -2630,7 +2634,7 @@ GameObject:
   - component: {fileID: 566980687}
   - component: {fileID: 566980686}
   - component: {fileID: 566980685}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bridge (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2996,7 +3000,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &618012231
 GameObject:
@@ -3041,7 +3045,7 @@ GameObject:
   - component: {fileID: 628724151}
   - component: {fileID: 628724153}
   - component: {fileID: 628724152}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: IslandPlatform (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3711,7 +3715,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 999
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4001,7 +4005,7 @@ Transform:
   - {fileID: 1364581905}
   - {fileID: 1212419937}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &971850412
 GameObject:
@@ -4014,7 +4018,7 @@ GameObject:
   - component: {fileID: 971850413}
   - component: {fileID: 971850415}
   - component: {fileID: 971850414}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: IslandPlatform (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4126,7 +4130,7 @@ GameObject:
   - component: {fileID: 972378251}
   - component: {fileID: 972378250}
   - component: {fileID: 972378249}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bridge (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4525,67 +4529,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1001 &1044685689
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4100119821390933016, guid: 2327a55a59e08d04cbce40d6d7d8f4a2, type: 3}
-      propertyPath: m_Name
-      value: Shroom
-      objectReference: {fileID: 0}
-    - target: {fileID: 4100119821390933020, guid: 2327a55a59e08d04cbce40d6d7d8f4a2, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4100119821390933021, guid: 2327a55a59e08d04cbce40d6d7d8f4a2, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4100119821390933021, guid: 2327a55a59e08d04cbce40d6d7d8f4a2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 4100119821390933021, guid: 2327a55a59e08d04cbce40d6d7d8f4a2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4100119821390933021, guid: 2327a55a59e08d04cbce40d6d7d8f4a2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4100119821390933021, guid: 2327a55a59e08d04cbce40d6d7d8f4a2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4100119821390933021, guid: 2327a55a59e08d04cbce40d6d7d8f4a2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4100119821390933021, guid: 2327a55a59e08d04cbce40d6d7d8f4a2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4100119821390933021, guid: 2327a55a59e08d04cbce40d6d7d8f4a2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4100119821390933021, guid: 2327a55a59e08d04cbce40d6d7d8f4a2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4100119821390933021, guid: 2327a55a59e08d04cbce40d6d7d8f4a2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4100119821390933021, guid: 2327a55a59e08d04cbce40d6d7d8f4a2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2327a55a59e08d04cbce40d6d7d8f4a2, type: 3}
 --- !u!1 &1111277791
 GameObject:
   m_ObjectHideFlags: 0
@@ -4791,7 +4734,7 @@ GameObject:
   - component: {fileID: 1126423681}
   - component: {fileID: 1126423680}
   - component: {fileID: 1126423679}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: IslandPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4928,7 +4871,7 @@ GameObject:
   - component: {fileID: 1138311115}
   - component: {fileID: 1138311117}
   - component: {fileID: 1138311116}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: IslandPlatform (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4967,7 +4910,7 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.48184657, y: -3.62156}
   - {x: -2.0271668, y: -2.1164155}
-  - {x: -2.2097337, y: -1.2337133}
+  - {x: -2.4182725, y: -0.94474155}
   - {x: 8.224796, y: -0.802988}
   - {x: 3.7423236, y: -4.5954766}
   - {x: 1.9429125, y: -4.907729}
@@ -6576,7 +6519,7 @@ Transform:
   m_LocalScale: {x: 80, y: 0.0848, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1571902953
 GameObject:
@@ -6917,7 +6860,7 @@ GameObject:
   - component: {fileID: 1763076459}
   - component: {fileID: 1763076461}
   - component: {fileID: 1763076462}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7457,7 +7400,7 @@ GameObject:
   - component: {fileID: 1823153809}
   - component: {fileID: 1823153808}
   - component: {fileID: 1823153807}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: IslandPlatform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7481,7 +7424,7 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: 1.8351705, y: -4.8841195}
-  - {x: -2.2695022, y: -1.3515023}
+  - {x: -2.503378, y: -1.3536762}
   - {x: 8.170869, y: -1.1920707}
   - {x: 1.7472162, y: -4.8808146}
   m_AdjacentStartPoint: {x: 0, y: 0}
@@ -7781,7 +7724,7 @@ Transform:
   - {fileID: 161375882}
   - {fileID: 566980684}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1905637639
 GameObject:
@@ -7952,7 +7895,7 @@ RectTransform:
   - {fileID: 410528284}
   - {fileID: 826270926}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

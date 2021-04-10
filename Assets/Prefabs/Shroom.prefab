@@ -129,6 +129,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  killer: {fileID: 0}
 --- !u!50 &8674536099155170123
 Rigidbody2D:
   serializedVersion: 4
@@ -162,4 +163,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2881d6f86de6b904e9d7d8cd53316fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weight: 5
+  Weight: 10

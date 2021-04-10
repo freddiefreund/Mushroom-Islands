@@ -16,6 +16,7 @@ public class ShroomMover : MonoBehaviour
     private float currentXPos;
     private float moveAmountPerSecond;
     private bool arrived = false;
+    public MushroomKiller killer;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class ShroomMover : MonoBehaviour
         spriteRenderer.color = color;
         StartCoroutine(FadeIn());
         StartMoving();
+        killer = GameObject.FindGameObjectWithTag("Killer").GetComponent<MushroomKiller>();
     }
 
     private void StartMoving()
@@ -158,6 +160,8 @@ public class ShroomMover : MonoBehaviour
             Debug.Log("I arrived!");
             arrived = true;
             StartCoroutine(FadeOut());
+            killer.SavedCount++;
+            killer.UpdateUI();
         }
     }
 
