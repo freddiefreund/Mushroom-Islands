@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Bridge : MonoBehaviour
+public class Bridge : MonoBehaviour, IPointerClickHandler
 {
     public float Durability = 100f;
+    public GameObject popupText;
 
 
     void Update()
@@ -13,4 +15,12 @@ public class Bridge : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void OnPointerClick(PointerEventData pointer){
+        Durability += 2;
+        if(Durability > 100){
+            Durability = 100;
+        }
+    }
+    
 }
