@@ -28,6 +28,7 @@ public class Bridge : MonoBehaviour, IPointerClickHandler
             if(Durability > 100){
                 Durability = 100;
             }
+            //cool
 
         }
 
