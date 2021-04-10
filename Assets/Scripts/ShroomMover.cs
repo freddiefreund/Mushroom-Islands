@@ -71,6 +71,7 @@ public class ShroomMover : MonoBehaviour
         float moveAmountX = moveAmountPerSecond / 20f;
         float maxMoveAmountY = 0.4f;
         Vector3 moveVector = new Vector3(moveAmountX, 0, 0);
+        spriteChanger.SetToStanding();
         while (!arrived && IsGrounded())
         {
             if (Time.time >= currentTime)
@@ -110,6 +111,7 @@ public class ShroomMover : MonoBehaviour
         if (hit1.collider != null) {
             return true;
         }
+        spriteChanger.SetToFalling();
         return false;
     }
 

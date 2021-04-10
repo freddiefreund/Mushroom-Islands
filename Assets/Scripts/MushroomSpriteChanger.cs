@@ -8,10 +8,12 @@ public class MushroomSpriteChanger : MonoBehaviour
     [SerializeField] private Sprite standing_left;
     [SerializeField] private Sprite jumping_left;
     [SerializeField] private Sprite smiling_left;
+    [SerializeField] private Sprite falling_left;
     
     [SerializeField] private Sprite standing_right;
     [SerializeField] private Sprite jumping_right;
     [SerializeField] private Sprite smiling_right;
+    [SerializeField] private Sprite falling_right;
 
     private SpriteRenderer spriteRenderer;
     private int direction;
@@ -26,9 +28,21 @@ public class MushroomSpriteChanger : MonoBehaviour
         direction = dir;
     }
 
-    public void SetToStanding()
+    public void SetToFalling()
     {
         
+        spriteRenderer.sprite = falling_right;
+    }
+    public void SetToStanding()
+    {
+        if (direction == 0)
+        {
+            spriteRenderer.sprite = standing_left;
+        }
+        else
+        {
+            spriteRenderer.sprite = standing_right;
+        }
     }
 
     public void SetToJumping()
