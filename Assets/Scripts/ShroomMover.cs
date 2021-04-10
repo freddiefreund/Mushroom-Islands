@@ -75,7 +75,7 @@ public class ShroomMover : MonoBehaviour
             startYPos = transform.position.y;
             for (int i = 0; i < 10; i++)
             {
-                Debug.Log("moveAmountY = " + moveAmountY);
+                //Debug.Log("moveAmountY = " + moveAmountY);
                 moveAmountY -= maxMoveAmountY / 10;
                 transform.position += moveVector;
                 transform.position += new Vector3(0, moveAmountY, 0);
@@ -83,7 +83,7 @@ public class ShroomMover : MonoBehaviour
             }
             for (int i = 0; i < 10; i++)
             {
-                Debug.Log("moveAmountY = " + moveAmountY);
+                //Debug.Log("moveAmountY = " + moveAmountY);
                 moveAmountY += maxMoveAmountY / 10;
                 if (Mathf.Abs(startYPos - transform.position.y) > 0 + Mathf.Epsilon)
                 {
@@ -101,7 +101,7 @@ public class ShroomMover : MonoBehaviour
     {
         if (!arrived)
         {
-            Debug.Log("I arrived!");
+            //Debug.Log("I arrived!");
             arrived = true;
         }
     }
