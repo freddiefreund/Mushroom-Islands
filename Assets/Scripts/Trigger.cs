@@ -7,7 +7,7 @@ public class Trigger : MonoBehaviour
     public Bridge Bridge;
     private float time;
 
-    private void OnTriggerStay2D(Collider2D other) {
+    private void OnTriggerEnter2D(Collider2D other) {
         Mushroom shroom = other.GetComponent<Mushroom>();
 
         if(time >= 1f){

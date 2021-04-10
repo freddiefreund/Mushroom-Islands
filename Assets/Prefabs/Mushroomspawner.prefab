@@ -43,7 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c054be3f4e54faa458e3b1ddb487d575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  islands: []
+  islands:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   spawnTime: 1.091
   shroomPrefab: {fileID: 4100119821390933016, guid: 2327a55a59e08d04cbce40d6d7d8f4a2, type: 3}
   currentTime: 0
