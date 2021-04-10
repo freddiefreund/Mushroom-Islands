@@ -130,6 +130,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  killer: {fileID: 0}
 --- !u!50 &8674536099155170123
 Rigidbody2D:
   serializedVersion: 4
