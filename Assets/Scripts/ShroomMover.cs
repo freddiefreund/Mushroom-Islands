@@ -122,7 +122,7 @@ public class ShroomMover : MonoBehaviour
     {
         if (!arrived)
         {
-            //Debug.Log("I arrived!");
+            Debug.Log("I arrived!");
             arrived = true;
             StartCoroutine(FadeOut());
         }
