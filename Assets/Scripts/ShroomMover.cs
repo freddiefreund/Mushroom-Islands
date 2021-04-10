@@ -100,9 +100,9 @@ public class ShroomMover : MonoBehaviour
         Vector2 pos1;
         Vector2 pos2;
         pos1 = position; 
-        pos1.x -= 0.3f;
+        pos1.x -= 0.4f;
         pos2 = position;
-        pos2.x += 0.3f;
+        pos2.x += 0.4f;
         Vector2 direction = Vector2.down;
         float distance = 3.0f;
     
