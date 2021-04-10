@@ -89,6 +89,20 @@ public class ShroomMover : MonoBehaviour
     
     bool IsGrounded() {
         Vector2 position = transform.position;
+        Vector2 pos1;
+        Vector2 pos2;
+        if (moveAmountPerSecond > 0)
+        {
+            // Shroom is moving right
+            pos1 = position; 
+            pos1.x -= 0.5f;
+        }
+        else
+        {
+            // Shroom is moving left
+            pos2 = position;
+            pos2.x += 0.5f;
+        }
         Vector2 direction = Vector2.down;
         float distance = 3.0f;
     
@@ -96,7 +110,6 @@ public class ShroomMover : MonoBehaviour
         if (hit.collider != null) {
             return true;
         }
-        Debug.Log("Not Grounded!");
         return false;
     }
 
